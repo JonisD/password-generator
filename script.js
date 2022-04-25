@@ -43,3 +43,6 @@ const getRandomCharacters = (passwordCriteria, length) => {
 const createRandomPassword = (passwordLength, passwordCriteria) => {
   // partition the password length into 4 evenly parts, one for each password criteria.
   const eachCriteriaLength = Math.round(passwordLength / passwordCriteria.length)
+
+  // get random characters that make up the password
+ const random_characters = getRandomCharacters(passwordCriteria, eachCriteriaLength)
