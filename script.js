@@ -42,7 +42,21 @@ const getRandomCharacters = (passwordCriteria, length) => {
 
 const createRandomPassword = (passwordLength, passwordCriteria) => {
   // partition the password length into 4 evenly parts, one for each password criteria.
-  const eachCriteriaLength = Math.round(passwordLength / passwordCriteria.length)
+  const eachCriteriaLength = Math.round(
+    passwordLength / passwordCriteria.length
+  );
 
   // get random characters that make up the password
- const random_characters = getRandomCharacters(passwordCriteria, eachCriteriaLength)
+  const random_characters = getRandomCharacters(
+    passwordCriteria,
+    eachCriteriaLength
+  );
+
+  // trim the password down to the specified length if applicable + convert array to string
+  const random_password =
+    random_characters.length > passwordLength
+      ? random_characters.slice(0, passwordLength).join("")
+      : random_characters.join("");
+
+  return random_password;
+};
