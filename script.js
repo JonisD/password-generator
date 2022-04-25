@@ -14,8 +14,30 @@ const getPasswordCriteria = () => {
   ];
 };
 
-const createRandomPassword = () => {
-  return "kdUE28(@d0";
+const randomIntFromInterval = (min, max) => {
+  return Math.floor(Math.random() * (max - 1 - (min + 1)) + min);
+};
+
+const getRandomCharacters = (passwordCriteria, length) => {
+  const characters = passwordCriteria
+    .map((availableCharacters) => {
+      const random_characters = [];
+
+      for (let i = 0; i < length; i++) {
+        const randomIndex = randomIntFromInterval(
+          0,
+          availableCharacters.length
+        );
+
+        const randomCharacter = availableCharacters[randomIndex];
+
+        random_characters.push(randomCharacter);
+      }
+      return random_characters;
+    })
+    .flat();
+
+  return characters;
 };
 
 // main function to generate the random password
