@@ -1,6 +1,8 @@
 ## Read Me
 
-## Link to deployed GitHub Page:
+## Link to deployed GitHub Page
+
+[GitHub Deployed link ](https://jonisd.github.io/password-generator/)
 
 ## Project Title: Password Generator
 
